@@ -1,0 +1,95 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "send_from_directory",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "url_for",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "index",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def index():\n   print('Request for index page received')\n   return render_template('index.html')\n@app.route('/favicon.ico')\ndef favicon():\n    return send_from_directory(os.path.join(app.root_path, 'static'),\n                               'favicon.ico', mimetype='image/vnd.microsoft.icon')\n@app.route('/hello', methods=['POST'])\ndef hello():\n   name = request.form.get('name')",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "favicon",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def favicon():\n    return send_from_directory(os.path.join(app.root_path, 'static'),\n                               'favicon.ico', mimetype='image/vnd.microsoft.icon')\n@app.route('/hello', methods=['POST'])\ndef hello():\n   name = request.form.get('name')\n   if name:\n       print('Request for hello page received with name=%s' % name)\n       return render_template('hello.html', name = name)\n   else:",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "hello",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def hello():\n   name = request.form.get('name')\n   if name:\n       print('Request for hello page received with name=%s' % name)\n       return render_template('hello.html', name = name)\n   else:\n       print('Request for hello1 page received with no name or blank name -- redirecting')\n       return redirect(url_for('index'))\nif __name__ == '__main__':\n   app.run()",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app = Flask(__name__)\n@app.route('/')\ndef index():\n   print('Request for index page received')\n   return render_template('index.html')\n@app.route('/favicon.ico')\ndef favicon():\n    return send_from_directory(os.path.join(app.root_path, 'static'),\n                               'favicon.ico', mimetype='image/vnd.microsoft.icon')\n@app.route('/hello', methods=['POST'])",
+        "detail": "app",
+        "documentation": {}
+    }
+]
